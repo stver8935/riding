@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- font size  -->
+    <dimen name="font_title">32sp</dimen>
+    <dimen name="font_sub_title">21sp</dimen>
+    <dimen name="font_body">17sp</dimen>
+    <dimen name="font_body_small">15sp</dimen>
+    <dimen name="font_btn">16sp</dimen>
+    <dimen name="font_caption">13sp</dimen>
+    <dimen name="font_label">11sp</dimen>
+
+    <!-- ui size -->
+    <dimen name="ui_whitespace_small">4dp</dimen>
+    <dimen name="ui_whitespace_medium">8dp</dimen>
+    <dimen name="ui_whitespace_large">16dp</dimen>
+
+    <dimen name="ui_btn_height">48dp</dimen>
+    <dimen name="ui_btn_width">88dp</dimen>
+
+    <dimen name="ui_btn_switch_height">20dp</dimen>
+    <dimen name="ui_btn_switch_width">34dp</dimen>
+
+    <dimen name="ui_btn_fab">56dp</dimen>
+    <dimen name="ui_btn_fab_small">40dp</dimen>
+
+    <dimen name="ui_icon_large">48dp</dimen>
+    <dimen name="ui_icon_medium">32dp</dimen>
+    <dimen name="ui_icon_small">24dp</dimen>
+
+    <dimen name="ui_input_height">52dp</dimen>
+    <dimen name="ui_bottom_nav_height">56dp</dimen>
+    <dimen name="ui_check_box">24dp</dimen>
+
+
+</resources>

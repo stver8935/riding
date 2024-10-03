@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">riding</string>
+
+
+
+    <!-- Toast Message  -->
+    <string name="toast_msg_back_pressed_close_app">뒤로 가기 버튼을 한번 더 누를 시 앱이 종료 됩니다.</string>
+
+    <!-- UI Message  -->
+    <string name="close_app">앱을 종료하시겠습니까</string>
+    <string name="back">뒤로가기</string>
+    <string name="title">제목</string>
+    <string name="post">게시물</string>
+    <string name="running_together">같이 달리기</string>
+
+
+
+
+</resources>
