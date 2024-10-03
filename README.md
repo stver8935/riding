@@ -6,5 +6,5 @@
 
 ### Project Info
 
-#### How Install This Project
+#### How to Install this project
 ----
