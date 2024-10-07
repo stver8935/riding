@@ -41,7 +41,8 @@ android {
         jvmTarget = "17"
     }
     buildFeatures {
-        compose = true
+//        compose = true
+        viewBinding = true
     }
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
@@ -58,8 +59,10 @@ dependencies {
     val lifecycleVer = "2.8.6"
     val composeVer = "1.9.2"
     val composeBomVer = "2024.09.03"
+    val compatVer = "1.7.0"
     val jUnitVer = "4.13.2"
     val jUnitExtVer = "1.2.1"
+    val constraintLayoutVer = "2.1.4"
 
     val gsonVer = "2.10.1"          // https://mvnrepository.com/artifact/com.google.code.gson/gson
 
@@ -78,22 +81,25 @@ dependencies {
     val loggerVer = "2.2.0"
 
     implementation("androidx.core:core-ktx:$coreVer")
+    implementation("androidx.appcompat:appcompat:$compatVer") // 최신 버전 확인 후 수정
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVer")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVer")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycleVer")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVer")
-    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVer")
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVer")
     //kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycleVer")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVer")
 
-    implementation("androidx.activity:activity-compose:$composeVer")
-    implementation(platform("androidx.compose:compose-bom:$composeBomVer"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.ui:ui-graphics")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.material:material-icons-extended")
+    implementation ("androidx.constraintlayout:constraintlayout:$constraintLayoutVer")
+
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVer")
+//    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVer")
+//    implementation("androidx.activity:activity-compose:$composeVer")
+//    implementation(platform("androidx.compose:compose-bom:$composeBomVer"))
+//    implementation("androidx.compose.ui:ui")
+//    implementation("androidx.compose.ui:ui-graphics")
+//    implementation("androidx.compose.ui:ui-tooling-preview")
+//    implementation("androidx.compose.material3:material3")
+//    implementation("androidx.compose.material:material-icons-extended")
 
     implementation("com.google.code.gson:gson:$gsonVer")
 
@@ -125,7 +131,7 @@ dependencies {
     testImplementation("junit:junit:$jUnitVer")
     androidTestImplementation("androidx.test.ext:junit:$jUnitExtVer")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:$composeBomVer"))
+//    androidTestImplementation(platform("androidx.compose:compose-bom:$composeBomVer"))
     androidTestImplementation("androidx.compose.ui:ui-test-junit4")
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
