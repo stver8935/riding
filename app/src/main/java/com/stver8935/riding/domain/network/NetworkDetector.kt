@@ -1,58 +1,45 @@
-package com.stver8935.riding.domain.network
-
-import android.app.Activity
 import android.content.Context
 import android.net.ConnectivityManager
-import android.net.LinkProperties
 import android.net.Network
 import android.net.NetworkCapabilities
 import android.net.NetworkRequest
+import com.stver8935.riding.domain.network.NetworkStateListener
 
 class NetworkDetector(
-    private val activity: Activity,
-    private val networkStateListener: NetworkStateListener
-): ConnectivityManager.NetworkCallback() {
-    override fun onAvailable(network: Network) {
-        //super.onAvailable(network)
-        networkStateListener.onAvailableNetwork()
-    }
+    ctx: Context
+) : ConnectivityManager.NetworkCallback() {
 
-    val connManager: ConnectivityManager = activity.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-    val networkReq = NetworkRequest.Builder()
+    private val connectManager: ConnectivityManager = ctx.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    private val networkRequest: NetworkRequest = NetworkRequest.Builder()
         .addTransportType(NetworkCapabilities.TRANSPORT_WIFI)
         .addTransportType(NetworkCapabilities.TRANSPORT_CELLULAR)
         .build()
 
+    private lateinit var networkStateListener: NetworkStateListener
+
+    fun registerCallback(networkStateListener: NetworkStateListener) {
+        this.networkStateListener = networkStateListener
+        connectManager.registerDefaultNetworkCallback(this)
+        connectManager.registerNetworkCallback(networkRequest, this)
+    }
+
+    fun unRegisterCallback() {
+        connectManager.unregisterNetworkCallback(this)
+    }
+
+    override fun onAvailable(network: Network) {
+        networkStateListener.onAvailableNetwork()
+    }
+
     override fun onLosing(network: Network, maxMsToLive: Int) {
-        super.onLosing(network, maxMsToLive)
+        networkStateListener.onLosing()
     }
 
     override fun onLost(network: Network) {
-        //super.onLost
-        networkStateListener.onLostNetwork()
+        networkStateListener.onLost()
     }
 
     override fun onUnavailable() {
-        super.onUnavailable()
-    }
-
-    override fun onCapabilitiesChanged(network: Network, networkCapabilities: NetworkCapabilities) {
-        super.onCapabilitiesChanged(network, networkCapabilities)
-    }
-
-    override fun onLinkPropertiesChanged(network: Network, linkProperties: LinkProperties) {
-        super.onLinkPropertiesChanged(network, linkProperties)
-    }
-
-    override fun onBlockedStatusChanged(network: Network, blocked: Boolean) {
-        super.onBlockedStatusChanged(network, blocked)
-    }
-
-    fun registerCallback(){
-        connManager.registerNetworkCallback(networkReq,this)
-    }
-
-    fun unRegisterCallback(){
-        connManager.unregisterNetworkCallback(this)
+        networkStateListener.onUnavailable()
     }
 }
