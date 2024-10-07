@@ -3,6 +3,8 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("com.google.devtools.ksp")
     id("org.jetbrains.kotlin.kapt")
+    id("com.google.gms.google-services")
+    id("com.google.firebase.crashlytics")
 }
 
 android {
@@ -73,6 +75,7 @@ dependencies {
     val fireBaseBomVer = "33.4.0"
     val firebaseCrashlyticsVer = "19.1.0"
     val firebaseAnalyticsVer = "22.1.0"
+    val loggerVer = "2.2.0"
 
     implementation("androidx.core:core-ktx:$coreVer")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:$lifecycleVer")
@@ -113,6 +116,8 @@ dependencies {
     implementation (platform("com.google.firebase:firebase-bom:$fireBaseBomVer"))
     implementation ("com.google.firebase:firebase-crashlytics-ktx:$firebaseCrashlyticsVer")
     implementation ("com.google.firebase:firebase-analytics-ktx:$firebaseAnalyticsVer")
+    implementation ("com.orhanobut:logger:$loggerVer")
+
 
 //    implementation ("com.google.dagger:hilt-android:$hiltVersion")
 //    implementation ("com.google.dagger:hilt-compiler:$hiltVersion")

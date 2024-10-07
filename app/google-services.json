@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "96627835796",
+    "project_id": "riding-419fe",
+    "storage_bucket": "riding-419fe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:96627835796:android:c392e90cce5729810a8581",
+        "android_client_info": {
+          "package_name": "com.stver8935.riding"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANA5XvoKs6pj9U8oUS19YbxPs9I7jxsyw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
