@@ -19,7 +19,6 @@ class NetworkDetector(
 
     fun registerCallback(networkStateListener: NetworkStateListener) {
         this.networkStateListener = networkStateListener
-        connectManager.registerDefaultNetworkCallback(this)
         connectManager.registerNetworkCallback(networkRequest, this)
     }
 
