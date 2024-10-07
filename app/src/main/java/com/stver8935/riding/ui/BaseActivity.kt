@@ -20,6 +20,7 @@ open class BaseActivity: ComponentActivity(),NetworkStateListener {
     private var backPressdTime: Long = 0
     private val BACK_PRESSED_TIMEOUT: Short  = 1000
     private lateinit var networkDetector: NetworkDetector
+    private val TAG = this::class.simpleName
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,8 +54,8 @@ open class BaseActivity: ComponentActivity(),NetworkStateListener {
             override fun handleOnBackPressed() {
                 if(System.currentTimeMillis() - backPressdTime >= BACK_PRESSED_TIMEOUT)
                 {
-                    val msg: String = resources.getString(R.string.toast_msg_back_pressed_close_app);
-                    Toast.makeText(this@BaseActivity,msg,Toast.LENGTH_LONG).show();
+                    val msg: String = resources.getString(R.string.toast_msg_back_pressed_close_app)
+                    Toast.makeText(this@BaseActivity,msg,Toast.LENGTH_LONG).show()
                     backPressdTime = System.currentTimeMillis()
                 }
                 else
