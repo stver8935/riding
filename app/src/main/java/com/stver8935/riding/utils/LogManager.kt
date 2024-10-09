@@ -47,7 +47,7 @@ object LogManager : LogStrategy {
         }
     }
 
-    enum class Level(val level: Int){
+    private enum class Level(val level: Int){
         VERBOSE(level = 2),
         DEBUG(level = 3),
         INFO(level = 4),
