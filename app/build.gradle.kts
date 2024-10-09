@@ -44,9 +44,9 @@ android {
 //        compose = true
         viewBinding = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
+//    composeOptions {
+//        kotlinCompilerExtensionVersion = "1.5.1"
+//    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -57,8 +57,6 @@ android {
 dependencies {
     val coreVer = "1.13.1"
     val lifecycleVer = "2.8.6"
-    val composeVer = "1.9.2"
-    val composeBomVer = "2024.09.03"
     val compatVer = "1.7.0"
     val jUnitVer = "4.13.2"
     val jUnitExtVer = "1.2.1"
@@ -75,6 +73,7 @@ dependencies {
 
     val leakCanaryVer = "2.14"     // https://github.com/square/leakcanary/releases
 
+    val materialVer = "1.12.0"
     val fireBaseBomVer = "33.4.0"
     val firebaseCrashlyticsVer = "19.1.0"
     val firebaseAnalyticsVer = "22.1.0"
@@ -88,33 +87,24 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycleVer")
     //kapt ("androidx.lifecycle:lifecycle-compiler:$lifecycleVer")
     implementation("androidx.lifecycle:lifecycle-common-java8:$lifecycleVer")
+    implementation("com.google.android.material:material:$materialVer")
 
     implementation ("androidx.constraintlayout:constraintlayout:$constraintLayoutVer")
-
-//    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycleVer")
-//    implementation("androidx.lifecycle:lifecycle-runtime-compose:$lifecycleVer")
-//    implementation("androidx.activity:activity-compose:$composeVer")
-//    implementation(platform("androidx.compose:compose-bom:$composeBomVer"))
-//    implementation("androidx.compose.ui:ui")
-//    implementation("androidx.compose.ui:ui-graphics")
-//    implementation("androidx.compose.ui:ui-tooling-preview")
-//    implementation("androidx.compose.material3:material3")
-//    implementation("androidx.compose.material:material-icons-extended")
 
     implementation("com.google.code.gson:gson:$gsonVer")
 
     implementation("com.squareup.retrofit2:retrofit:$retrofitVer")
-    ksp ("com.github.bumptech.glide:glide:$glideVer")
+    implementation ("com.github.bumptech.glide:glide:$glideVer")
 
     implementation ("androidx.datastore:datastore-preferences:1.1.1")
 
     implementation("androidx.room:room-runtime:$roomVer")
     annotationProcessor("androidx.room:room-compiler:$roomVer")
-    ksp ("androidx.room:room-compiler:$roomVer")
+    annotationProcessor("androidx.room:room-compiler:$roomVer")
     implementation ("androidx.room:room-paging:$roomVer")
 
     implementation("com.google.dagger:dagger:$daggerVer")
-    kapt("com.google.dagger:dagger-compiler:$daggerVer")
+    annotationProcessor("com.google.dagger:dagger-compiler:$daggerVer")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVer")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVer")
@@ -131,9 +121,5 @@ dependencies {
     testImplementation("junit:junit:$jUnitVer")
     androidTestImplementation("androidx.test.ext:junit:$jUnitExtVer")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
-//    androidTestImplementation(platform("androidx.compose:compose-bom:$composeBomVer"))
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    debugImplementation("androidx.compose.ui:ui-test-manifest")
     debugImplementation("com.squareup.leakcanary:leakcanary-android:$leakCanaryVer")
 }
