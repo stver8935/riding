@@ -2,6 +2,22 @@
     <string name="app_name">riding</string>
 
 
+    <!-- bottom navigation title names -->
+    <string name="nav_home">홈</string>
+    <string name="nav_bookmark">즐겨찾기</string>
+    <string name="nav_community">커뮤니티</string>
+    <string name="nav_statistics">통계</string>
+    <string name="nav_setting">설정</string>
+    
+    <!-- hint -->
+    <string name="id">아이디</string>
+    <string name="pwd">비밀번호</string>
+
+    <!-- -->
+    <string name="find_account">아이디/비밀번호 찾기</string>
+    <string name="sign_up">회원가입</string>
+    <string name="sign_in">로그인</string>
+
 
     <!-- Toast Message  -->
     <string name="toast_msg_back_pressed_close_app">뒤로 가기 버튼을 한번 더 누를 시 앱이 종료 됩니다.</string>
