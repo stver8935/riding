@@ -9,5 +9,8 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="conceptColor">#999999</color>
+    <color name="gray_000">#f8f9fa</color>
+    <color name="primary_001">#005CE6</color>
+
 
 </resources>
