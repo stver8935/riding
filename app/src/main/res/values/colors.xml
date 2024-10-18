@@ -8,6 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
+    <color name="lightGray">#D3D3D3</color>
+    <color name="gainsboro">#DCDCDC</color>
+    <color name="silver">C0C0C0</color>
+    <color name="whiteSmoke">#F5F5F5</color>
+    <color name="ghostWhite">#F8F8FF</color>
+
     <color name="conceptColor">#999999</color>
     <color name="gray_000">#f8f9fa</color>
     <color name="primary_001">#005CE6</color>
